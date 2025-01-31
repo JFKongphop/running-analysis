@@ -36,7 +36,7 @@ def get_csv_files(folder_name: str) -> List[str]:
   return csv_files
 
 running_folder = 'running'
-output_folder = 'aaa'
+output_folder = 'clean-data'
 
 if not os.path.exists(output_folder):
   os.makedirs(output_folder)
@@ -87,4 +87,4 @@ for csv_file in running_csv_files:
   output_file = concat_path(output_folder, os.path.basename(csv_file))
   df.to_csv(output_file, index=False)
 
-print("New CSV files have been created in the 'aaa' folder.")
+print("New CSV files have been created in the 'clean-data' folder.")
