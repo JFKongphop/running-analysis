@@ -46,6 +46,8 @@ running_csv_files = get_csv_files(running_folder)
 for csv_file in running_csv_files:
   df = pd.read_csv(csv_file)
 
+  df = df[df['Distance(km)'] != 0]
+
   rename_column(df, 'Active energy burned(kcal)', 'Energy (kcal)')
   rename_column(df, 'Heart rate: Average(count/min)', 'Heart rate: Average(min)')
   rename_column(df, 'Heart rate: Maximum(count/min)', 'Heart rate: Maximum(min)')
